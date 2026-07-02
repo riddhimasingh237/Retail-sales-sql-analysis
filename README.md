@@ -164,3 +164,17 @@ SELECT
 FROM hourly_sale
 GROUP BY shifts;
 ```
+
+## Key Findings
+
+* The retail sales dataset was successfully cleaned by identifying and removing records with missing or null values, ensuring reliable analysis.
+* The analysis revealed the total number of sales transactions, unique customers, and product categories available in the dataset.
+* Product categories showed different levels of sales performance, helping identify categories that generated higher revenue and attracted more customer purchases.
+* High-value transactions were identified to understand purchases with total sales above a specified amount.
+* Customer purchasing behavior varied across gender and age groups, indicating that different customer segments may have different product preferences.
+* The analysis identified the average age of customers purchasing products from each category, which can support targeted marketing strategies.
+* Monthly sales analysis helped identify the best-performing months in each year based on sales performance.
+* The top customers were identified based on their total spending, highlighting customers who contribute significantly to overall revenue.
+* Sales activity differed across Morning, Afternoon, and Evening shifts, providing insights into peak purchasing hours.
+* The project demonstrates that SQL can be used to convert raw retail transaction data into useful business insights for improving customer targeting, inventory planning, and sales strategy.
+
