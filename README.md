@@ -30,11 +30,11 @@ or sale_date is null or sale_time is null	or customer_id is null or gender is nu
 
 *Data Exploration*
 Q1 how many sales are there 
-'''sql
-select 
-COUNT (transactions_id) as total_sales
-from [Retail Database]
-'''
+```sql
+SELECT *
+FROM retail_sales
+WHERE sale_date = '2022-11-05';
+```
 
 Q2 how many unique customers we have
 select count(distinct(customer_id))
