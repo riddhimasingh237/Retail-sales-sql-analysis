@@ -12,26 +12,27 @@ This project focuses on analyzing retail sales transaction data using SQL to und
 # Project Structure
 
 # 1. Data Exploration and Cleaning
-**Record Count**: Determine the total number of records in the dataset.
-**Customer Count**: Find out how many unique customers are in the dataset.
-**Category Count**: Identify all unique product categories in the dataset.
-**Null Value Check**: Check for any null values in the dataset and delete records with missing data.
+**1. Record Count**: Determine the total number of records in the dataset.
+**2. Customer Count**: Find out how many unique customers are in the dataset.
+**3. Category Count**: Identify all unique product categories in the dataset.
+**4. Null Value Check**: Check for any null values in the dataset and delete records with missing data.
 
 ```sql
 select*
 from [Retail Database]
-where transactions_id is null or sale_date is null or sale_time is null or customer_id is null or gender is null or age is null	or category is null or quantiy is null or price_per_unit is null or cogs is null or total_sale is null 
+where transactions_id is null or sale_date is null or sale_time is null or customer_id is null or gender is null or age is null	or category is null or quantiy is null or price_per_unit is null or cogs is null or total_sale is null
+```
 
-
-
+```sql
 delete 
 from [Retail Database]
 where transactions_id is null
-or sale_date is null or sale_time is null	or customer_id is null or gender is null or category is null or quantiy is null orprice_per_unit is null or cogs is null or total_sale is null ```
+or sale_date is null or sale_time is null	or customer_id is null or gender is null or category is null or quantiy is null orprice_per_unit is null or cogs is null or total_sale is null
+```
 
-**Data Exploration
+**Data Exploration**
 
-Q1 how many sales are there**
+**Q1 how many sales are there**
  ```sql
  SELECT *
  FROM retail_sales
