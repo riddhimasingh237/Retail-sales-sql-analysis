@@ -11,7 +11,7 @@ This project focuses on analyzing retail sales transaction data using SQL to und
 
 # Project Structure
 
-# 1. Data Exploration and Cleaning
+# Data Exploration and Cleaning
 **1. Record Count**: Determine the total number of records in the dataset.
 **2. Customer Count**: Find out how many unique customers are in the dataset.
 **3. Category Count**: Identify all unique product categories in the dataset.
@@ -39,13 +39,13 @@ or sale_date is null or sale_time is null	or customer_id is null or gender is nu
  WHERE sale_date = '2022-11-05';
  ```
 
-# Q2 how many unique customers we have
+**Q2 how many unique customers we have**
  ```sql
 select count(distinct(customer_id))
  from [Retail Database]
 ```
 
-# Q3 how many categories we have
+**Q3 how many categories we have**
 ```sql
 select distinct(category) as categories
 from [Retail Database]
