@@ -20,75 +20,93 @@ This project focuses on analyzing retail sales transaction data using SQL to und
 ```sql
 select*
 from [Retail Database]
-where transactions_id is null or sale_date is null or sale_time is null or customer_id is null or gender is null or age is null	or category is null or quantiy is null or price_per_unit is null or cogs is null or total_sale is null ```
+where transactions_id is null or sale_date is null or sale_time is null or customer_id is null or gender is null or age is null	or category is null or quantiy is null or price_per_unit is null or cogs is null or total_sale is null 
 
 
-```sql
+
 delete 
 from [Retail Database]
 where transactions_id is null
 or sale_date is null or sale_time is null	or customer_id is null or gender is null or category is null or quantiy is null orprice_per_unit is null or cogs is null or total_sale is null ```
 
-*Data Exploration*
-Q1 how many sales are there 
-```sql
-SELECT *
-FROM retail_sales
-WHERE sale_date = '2022-11-05';
+**Data Exploration
+
+Q1 how many sales are there**
+ ```sql
+ SELECT *
+ FROM retail_sales
+ WHERE sale_date = '2022-11-05';
+ ```
+
+# Q2 how many unique customers we have
+ ```sql
+select count(distinct(customer_id))
+ from [Retail Database]
 ```
 
-Q2 how many unique customers we have
-select count(distinct(customer_id))
-from [Retail Database]
-
-Q3 how many categories we have
+# Q3 how many categories we have
+```sql
 select distinct(category) as categories
 from [Retail Database]
+```
 
 # Data Analysis & Findings
 The following SQL queries were developed to answer specific business questions:
 
-*Q1  retrieve all columns for sales made on '2022-11-05:*
+**Q1  retrieve all columns for sales made on '2022-11-05:**
+```sql
 select* 
 from [Retail Database]
 where sale_date = '2022-11-05';
+```
 
-*Q2 retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov-2022:*
+**Q2 retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov-2022:**
+```sql
 SELECT *
 FROM [Retail Database]
 WHERE category = 'clothing'
   AND quantiy >= 4
   AND FORMAT(sale_date, 'yyyy-MM') = '2023-01';
+```
 
-  *Q3 calculate the total sales (total_sale) for each category*
-  select
+ **Q3 calculate the total sales (total_sale) for each category**
+  ```sql
+select
   category,
   sum(total_sale) as total_sales
   FROM [Retail Database]
   group by category
+```
 
-  *Q4 find the average age of customers who purchased items from the 'Beauty' category*
-  select
+  **Q4 find the average age of customers who purchased items from the 'Beauty' category**
+  ```sql
+select*
   category,
   avg(age) as average_age
   from [Retail Database]
  group by category
  having category='Beauty'
+```
 
- *Q5 find all transactions where the total_sale is greater than 1000*
- select *
+ **Q5 find all transactions where the total_sale is greater than 1000**
+ ```sql
+select *
  from [Retail Database]
  where total_sale>1000
+```
 
- *Q6 find the total number of transactions (transaction_id) made by each gender in each category*
- select 
+ **Q6 find the total number of transactions (transaction_id) made by each gender in each category**
+ ```sql
+select 
  gender,
  category,
  COUNT(*) as total_transactions
  from [Retail Database]
  group by gender , category
+```
  
- *Q7 calculate the average sale for each month. Find out best selling month in each year*
+ **Q7 calculate the average sale for each month. Find out best selling month in each year**
+```sql
  select
  years,
  months,
@@ -104,24 +122,30 @@ WHERE category = 'clothing'
  month(sale_date) 
  )t
  where ranks = 1
+```
 
- *Q8 SQL query to find the top 5 customers based on the highest total sales*
- select top 5
+**Q8 SQL query to find the top 5 customers based on the highest total sales**
+ ```sql
+select top 5
  customer_id,
  sum( total_sale) as total_sale
  from [Retail Database]
  group by customer_id
  order by total_sale desc
+```
 
- *Q9 find the number of unique customers who purchased items from each category*
- select 
+ **Q9 find the number of unique customers who purchased items from each category**
+ ```sql
+select 
  category,
  count(distinct(customer_id)) as unique_customers
  from [Retail Database]
  group by category
+```
 
-*Q10 create each shift and number of orders (Example Morning <12, Afternoon Between 12 & 17, Evening >17)*
+**Q10 create each shift and number of orders (Example Morning <12, Afternoon Between 12 & 17, Evening >17)**
 
+```sql
 WITH hourly_sale AS
 (
     SELECT
@@ -137,3 +161,4 @@ SELECT
     COUNT(*) AS total_orders
 FROM hourly_sale
 GROUP BY shifts;
+```
