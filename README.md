@@ -178,3 +178,9 @@ GROUP BY shifts;
 * Sales activity differed across Morning, Afternoon, and Evening shifts, providing insights into peak purchasing hours.
 * The project demonstrates that SQL can be used to convert raw retail transaction data into useful business insights for improving customer targeting, inventory planning, and sales strategy.
 
+# Report
+This project analyzes retail sales data using SQL to understand customer behavior, sales performance, product category trends, and peak purchasing periods. The dataset was cleaned, explored, and analyzed using SQL queries, aggregate functions, date functions, CTEs, and window functions.
+
+# Conclusion
+The analysis provides useful insights into top customers, high-performing categories, high-value transactions, and peak sales periods. These insights can help businesses improve inventory planning, customer targeting, promotions, and overall sales strategy.
+
