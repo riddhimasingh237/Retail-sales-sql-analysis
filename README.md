@@ -6,12 +6,13 @@ This project focuses on analyzing retail sales transaction data using SQL to und
 # Project Objectives
 1. **Set Up Retail Sales Database**: Create a retail sales database and import the provided sales transaction dataset into SQL Server for analysis.
 2. **Data Cleaning**: Check the dataset for missing, null, or incomplete values and remove invalid records to ensure accurate analysis.
-3. **Exploratory Data Analysis (EDA)**: Perform basic analysis to understand the structure of the dataset, including total transactions, unique customers, product categories,         sales dates, and overall revenue.
+3. **Exploratory Data Analysis (EDA)**: Perform basic analysis to understand the structure of the dataset, including total transactions, unique customers, product categories,sales dates, and overall revenue.
 4. **Customer Analysis**: Analyze customer purchasing behavior based on gender, age, spending patterns, and product category preferences.
 
 # Project Structure
 
 # Data Exploration and Cleaning
+
 **1. Record Count**: Determine the total number of records in the dataset.
 **2. Customer Count**: Find out how many unique customers are in the dataset.
 **3. Category Count**: Identify all unique product categories in the dataset.
