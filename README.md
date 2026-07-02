@@ -4,29 +4,30 @@
 This project focuses on analyzing retail sales transaction data using SQL to understand customer purchasing behavior, overall sales performance, product category trends, and time-based sales patterns. The aim of the project is to transform raw retail transaction data into meaningful business insights that can help retailers make informed decisions related to inventory management, customer targeting, sales strategy, and product performance.
 
 # Project Objectives
-1. *Set Up Retail Sales Database*: Create a retail sales database and import the provided sales transaction dataset into SQL Server for analysis.
-2. *Data Cleaning*: Check the dataset for missing, null, or incomplete values and remove invalid records to ensure accurate analysis.
-3. *Exploratory Data Analysis (EDA)*: Perform basic analysis to understand the structure of the dataset, including total transactions, unique customers, product categories,         sales dates, and overall revenue.
-4. *Customer Analysis*: Analyze customer purchasing behavior based on gender, age, spending patterns, and product category preferences.
+1. **Set Up Retail Sales Database**: Create a retail sales database and import the provided sales transaction dataset into SQL Server for analysis.
+2. **Data Cleaning**: Check the dataset for missing, null, or incomplete values and remove invalid records to ensure accurate analysis.
+3. **Exploratory Data Analysis (EDA)**: Perform basic analysis to understand the structure of the dataset, including total transactions, unique customers, product categories,         sales dates, and overall revenue.
+4. **Customer Analysis**: Analyze customer purchasing behavior based on gender, age, spending patterns, and product category preferences.
 
 # Project Structure
 
-#1. Data Exploration and Cleaning
-*Record Count*: Determine the total number of records in the dataset.
-*Customer Count*: Find out how many unique customers are in the dataset.
-*Category Count*: Identify all unique product categories in the dataset.
-*Null Value Check*: Check for any null values in the dataset and delete records with missing data.
+# 1. Data Exploration and Cleaning
+**Record Count**: Determine the total number of records in the dataset.
+**Customer Count**: Find out how many unique customers are in the dataset.
+**Category Count**: Identify all unique product categories in the dataset.
+**Null Value Check**: Check for any null values in the dataset and delete records with missing data.
 
-'''sql
+```sql
 select*
 from [Retail Database]
-where transactions_id is null or sale_date is null or sale_time is null or customer_id is null or gender is null or age is null	or category is null or quantiy is null or price_per_unit is null or cogs is null or total_sale is null '''
+where transactions_id is null or sale_date is null or sale_time is null or customer_id is null or gender is null or age is null	or category is null or quantiy is null or price_per_unit is null or cogs is null or total_sale is null ```
 
 
+```sql
 delete 
 from [Retail Database]
 where transactions_id is null
-or sale_date is null or sale_time is null	or customer_id is null or gender is null or category is null or quantiy is null orprice_per_unit is null or cogs is null or total_sale is null
+or sale_date is null or sale_time is null	or customer_id is null or gender is null or category is null or quantiy is null orprice_per_unit is null or cogs is null or total_sale is null ```
 
 *Data Exploration*
 Q1 how many sales are there 
